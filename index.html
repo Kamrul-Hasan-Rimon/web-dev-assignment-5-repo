@@ -11,16 +11,17 @@
 
 <body class="bg-white">
     <!-- Header -->
-    <header class="bg-slate-100 pt-4 pb-14 px-20">
-        <div class="container mx-auto flex justify-between items-center px-4">
+    <header class="bg-slate-100 pt-4 pb-14 lg:px-20">
+        <div class="container lg:mx-auto flex   lg:justify-between  lg:items-center px-4">
             <div class="flex items-center space-x-4">
-                <button class="bg-[#B4F461] font-bold px-7 py-2 rounded-lg">Blog</button>
+                <button id="blog-home-btn" class="bg-[#B4F461] font-bold px-7 py-2 rounded-lg"> <span
+                        id="blog-btn">Blog</span> <span id="home-btn" class="hidden">Home</span></button>
             </div>
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center ml-10  space-x-2">
                 <img src="images/assets/logo.png" alt="Donate Icon" class="w-8 h-8">
                 <h1 class="text-2xl font-bold">Donate Bangladesh</h1>
             </div>
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center ml-3 space-x-2">
                 <img src="images/assets/coin.png" alt="Coin Icon" class="w-6 h-6">
                 <span class="text-xl font-semibold text-slate-500"><span id="total-bdt">999000</span> BDT</span>
             </div>
@@ -30,8 +31,9 @@
 
     <!-- Main section -->
     <main class="container mx-auto my-8 px-4">
+
         <!-- donation and history btn -->
-        <div class="flex justify-center space-x-4 mb-6">
+        <div id="donatin-history-btn" class="flex justify-center space-x-4 mb-6">
             <button id="donation" class="bg-[#B4F461] font-bold px-6 py-2 rounded-lg">Donation</button>
             <button id="history"
                 class="bg-white border border-gray-300 text-gray-600 px-6 py-2 rounded-lg">History</button>
@@ -39,8 +41,61 @@
 
         <!-- History Section -->
         <div id="history-section" class="container  hidden mx-auto px-4 py-6">
-            <div id="history-container" class="items-center mx-56 space-y-4">
+            <div id="history-container" class="items-center lg:mx-56 space-y-4">
 
+            </div>
+        </div>
+
+        <!-- QNA section -->
+        <div id="qna" class="max-w-4xl mx-auto p-8 hidden">
+            <div class="flex items-center text-2xl font-bold mb-8">
+                Important FAQ
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <details class="bg-white rounded-lg border-2 border-gray-300 p-4">
+                    <summary class="cursor-pointer text-lg font-semibold">What is the Document Object Model (DOM)?
+                    </summary>
+                    <div class="mt-2">
+                        <p>The Document Object Model (DOM) is a programming interface for web documents. It represents
+                            the structure of a web page as a tree of objects, where each object corresponds to a part of
+                            the document (like an element, attribute, or text). The DOM allows programming languages,
+                            such as JavaScript, to interact with and manipulate web pages.</p>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-lg border-2 border-gray-300 p-4">
+                    <summary class="cursor-pointer text-lg font-semibold">How do you select an element from the DOM?
+                    </summary>
+                    <div class="mt-2">
+                        <p>I can select an element from the DOM using various JavaScript methods. These methods allow me
+                            to access specific elements or groups of elements in order to interact with or modify them.
+                        </p>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-lg border-2 border-gray-300 p-4">
+                    <summary class="cursor-pointer text-lg font-semibold">What is event delegation in the DOM, and why
+                        is it useful?</summary>
+                    <div class="mt-2">
+                        <p>Event delegation is a technique in the DOM where you take advantage of event propagation (or
+                            "bubbling") to handle events at a higher level (usually a parent element) rather than
+                            attaching event listeners to individual child elements. It allows a single event listener to
+                            manage all child elements, even if they are added dynamically.</p>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-lg border-2 border-gray-300 p-4">
+                    <summary class="cursor-pointer text-lg font-semibold">How do you manipulate an element's attributes
+                        and styles using the DOM</summary>
+                    <div class="mt-2">
+                        <p>Manipulating Element Attributes :
+                            The classList object only provide methods to change the class of an element. If you want to
+                            change other attributes like id , href , or src , you can use the setAttribute() method. The
+                            setAttribute() method accepts two arguments: The name of the attribute to set.</p>
+                    </div>
+                </details>
             </div>
         </div>
         <!-- Modal Structure -->
@@ -50,12 +105,14 @@
                 <img class="mx-auto" src="images/assets/coin.png" alt="">
                 <p class="text-lg">You have donated for <span id="modal-card-name" class="font-semibold"></span></p>
                 <p class="text-lg font-semibold text-green-600 mt-2">Successfully</p>
-                <button id="close-modal" class="mt-6 bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">close confirmation</button>
+                <button id="close-modal"
+                    class="mt-6 bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">close
+                    confirmation</button>
             </div>
         </div>
 
         <!-- Donation Cards -->
-        <div id="cards" class="grid hidden gap-6 mx-40">
+        <div id="cards" class="grid gap-6 lg:mx-40">
             <!-- First Card -->
             <div class="bg-white rounded-lg border-2 border-gray-300 p-6 flex">
                 <img src="images/assets/noakhali.png" alt="Flood Image" class="w-1/3 h-full ">
@@ -141,7 +198,6 @@
     </main>
     <script src="js/history-show.js"></script>
     <script src="js/donate-in-cards-and-donation-histories.js"></script>
-    <script src="js/toggle-button.js"></script>
 </body>
 
 </html>
